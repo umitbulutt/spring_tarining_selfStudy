@@ -1,5 +1,6 @@
 package com.company.controller;
 
+import com.company.annotation.LoggingAnnotation;
 import com.company.dto.CourseDTO;
 import com.company.service.CourseService;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +22,23 @@ public class CourseController {
 //        throw new RuntimeException("My Exception");
         List<CourseDTO> list = courseService.getCourses();
         return list;
+    }
+
+    @LoggingAnnotation
+    @GetMapping("/{id}")
+    public CourseDTO getCourseById(@PathVariable("id") Long courseId) {
+        return courseService.getCourseById(courseId);
+    }
+
+    @GetMapping("/category/{name}")
+    public List<CourseDTO> getCourseByCategory(@PathVariable("name") String category) {
+        return courseService.getCoursesByCategory(category);
+    }
+
+    @LoggingAnnotation
+    @PostMapping
+    public CourseDTO createCourse(@RequestBody CourseDTO course) {
+        return courseService.createCourse(course);
     }
 
     @PutMapping("/{id}")
