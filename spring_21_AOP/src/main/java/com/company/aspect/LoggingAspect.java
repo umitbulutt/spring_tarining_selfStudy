@@ -3,10 +3,7 @@ package com.company.aspect;
 
 import com.company.dto.CourseDTO;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
@@ -87,12 +84,17 @@ public class LoggingAspect {
   //  }
 
 
-     @AfterReturning(pointcut = "afterReturningGetMappingAnnotation()", returning = "results")
-     public void afterReturningGetMappingOperation(JoinPoint joinPoint, List<CourseDTO> results){
-         logger.info("After Returning -> Meth  od: {}, Result: {}",
-                 joinPoint.getSignature(), results.toString());
-     }
+//    @AfterReturning(pointcut = "afterReturningGetMappingAnnotation()", returning = "results")
+//    public void afterReturningGetMappingOperation(JoinPoint joinPoint, List<CourseDTO> results){
+//        logger.info("After Returning -> Meth  od: {}, Result: {}",
+//                joinPoint.getSignature(), results.toString());
+//    }
 
 
+    @AfterThrowing(pointcut = "afterReturningGetMappingAnnotation()", throwing =  "exception")
+    public  void afterThrowingGetMappingOperation(JoinPoint joinPoint, RuntimeException exception){
+        logger.error("After Throwing -> Method: {}, Exception: {}",
+                joinPoint.getSignature().toShortString(), exception.getMessage());
+    }
 
 }
