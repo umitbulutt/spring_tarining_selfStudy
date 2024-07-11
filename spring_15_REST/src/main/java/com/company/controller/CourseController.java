@@ -27,15 +27,30 @@ public class CourseController {
 
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public CourseDTO getCourseById(@PathVariable("id") long courseId){
         return courseService.getCourseById(courseId);
     }
 
-    @GetMapping("{category}")
-    public List<CourseDTO> getCourseByCategory(@PathVariable("category") String category){
-        return courseService.getCoursesByCategory(category);
-    }
+  @GetMapping("{category}")
+  public List<CourseDTO> getCourseByCategory(@PathVariable("category") String category){
+      return courseService.getCoursesByCategory(category);
+  }
+
+   @PostMapping()
+   public CourseDTO createCourse(@RequestBody CourseDTO course){
+       return courseService.createCourse(course);
+   }
+
+   @PutMapping("{id}")
+   public void updateCourse(@PathVariable("id") long courseId,@RequestBody CourseDTO course){
+        courseService.updateCourse(courseId,course);
+   }
+
+   @DeleteMapping("{id}")
+    public void deleteCourseById(@PathVariable("id") long courseId){
+        courseService.deleteCourseById(courseId);
+   }
 
 
 }
