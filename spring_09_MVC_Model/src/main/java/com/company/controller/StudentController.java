@@ -1,6 +1,6 @@
-package com.cydeo.controller;
+package com.company.controller;
 
-import com.cydeo.model.Student;
+import com.company.model.Student;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;

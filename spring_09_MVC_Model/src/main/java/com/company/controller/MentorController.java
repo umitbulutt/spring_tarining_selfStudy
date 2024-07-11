@@ -1,7 +1,7 @@
-package com.cydeo.controller;
+package com.company.controller;
 
-import com.cydeo.enums.Gender;
-import com.cydeo.model.Mentor;
+import com.company.enums.Gender;
+import com.company.model.Mentor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
