@@ -5,9 +5,7 @@ import com.company.dto.CourseDTO;
 import com.company.service.CourseService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -30,6 +28,30 @@ public class CourseController_ResponseEntity {
                 .body(courseService.getCourses());
     }
 
+
+    @GetMapping("{id}")
+    public ResponseEntity<CourseDTO> getCourseById(@PathVariable("id") long id){
+        return ResponseEntity.ok(courseService.getCourseById(id));
+    }
+
+    @GetMapping("/category/{name}")
+    public ResponseEntity<List<CourseDTO>> getCourseByCategory(@PathVariable("name") String category){
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .header("Version","Api.V2")
+                .body(courseService.getCoursesByCategory(category));
+    }
+
+
+    @PostMapping
+    public ResponseEntity<CourseDTO> createCourse(@RequestBody CourseDTO course){
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .header("Operation","Create")
+                .header("Success","A course is created.")
+                .body(courseService.createCourse(course));
+
+
+    }
 
 
 
