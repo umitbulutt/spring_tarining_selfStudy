@@ -67,6 +67,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public List<Course>  getSummerCourse(String category) {
+        return courseRepository.findAllByCategory(category);
+    }
+
+    @Override
     public void deleteCourseById(long courseId) {
         courseRepository.deleteById(courseId);
     }

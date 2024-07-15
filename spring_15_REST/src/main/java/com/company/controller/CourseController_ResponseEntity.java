@@ -20,7 +20,7 @@ public class CourseController_ResponseEntity {
     }
 
     @GetMapping
-    public ResponseEntity<List<CourseDTO>> getAllCourses(){
+    public ResponseEntity <List<CourseDTO>> getAllCourses(){
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .header("Version","Company.V2")

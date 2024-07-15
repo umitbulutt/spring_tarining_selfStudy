@@ -1,6 +1,7 @@
 package com.company.service;
 
 import com.company.dto.CourseDTO;
+import com.company.entity.Course;
 
 import java.util.List;
 
@@ -16,5 +17,7 @@ public interface CourseService {
 
     void deleteCourseById(long courseId);
     void deleteCourses();
+
+    List<Course> getSummerCourse(String category);
 
 }

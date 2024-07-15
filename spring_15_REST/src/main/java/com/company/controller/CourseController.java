@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController  // ResponseBody + Controller
 @RequestMapping("/courses/api/v1")
 public class CourseController {
 
@@ -21,7 +21,6 @@ public class CourseController {
 
     @GetMapping
     public List<CourseDTO> getAllCourses(){
-
         //return all courses
         return courseService.getCourses();
 
@@ -52,5 +51,9 @@ public class CourseController {
         courseService.deleteCourseById(courseId);
    }
 
+   @GetMapping("/category/{summer}")
+    public void getSummerCourse(@PathVariable("summer") String category){
+        courseService.getSummerCourse(category);
+   }
 
 }

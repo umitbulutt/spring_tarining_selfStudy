@@ -9,4 +9,4 @@ INSERT INTO COURSES(NAME, CATEGORY, RATING, DESCRIPTION)
 VALUES('Fully Reactive: Spring, Kotlin, and JavaFX Playing Together', 'Spring', 3,
        'Unleash the power of Reactive Spring with Kotlin and Spring Boot');
 INSERT INTO COURSES(NAME, CATEGORY, RATING, DESCRIPTION)
-VALUES('Getting Started with Spring Cloud Kubernetes', 'Spring', 5, 'Master Spring Boot application deployment with Kubernetes');
+VALUES('Getting Started with Spring Cloud Kubernetes', 'Summer', 5, 'Master Spring Boot application deployment with Kubernetes');
