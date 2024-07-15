@@ -22,13 +22,17 @@ public class Spring19RestOpenApi3Application {
         return new ModelMapper();
     }
 
+
     @Bean
-    public OpenAPI customOpenApi() {
-        return new OpenAPI().info(new Info()
-                        .title("Cydeo Application OpenAPI")
+    public OpenAPI customOpenApi(){
+        return new OpenAPI()
+                .info(new Info()
+                        .title("Cydeo Application OpenAPI of Umit")
                         .version("v1")
-                        .description("Cydeo application API documentation"))
-                .servers(List.of(new Server().url("https://dev.cydeo.com").description("Dev Environment")));
+                        .description("Cydeo application API Documentation of Umit"))
+                .servers(List.of((new Server().url("https://dec.cydeo.com").description("Dev Environment of Umit"))));
     }
+
+
 
 }
