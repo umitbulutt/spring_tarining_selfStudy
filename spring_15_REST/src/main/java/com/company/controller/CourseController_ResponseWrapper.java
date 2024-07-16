@@ -23,7 +23,9 @@ public class CourseController_ResponseWrapper {
 
     @GetMapping
     public ResponseEntity<ResponseWrapper> getAllCourses(){
-        return ResponseEntity.status(HttpStatus.ACCEPTED)
+
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
                 .header("Version","Cydeo.V3")
                 .body(
                         new ResponseWrapper(

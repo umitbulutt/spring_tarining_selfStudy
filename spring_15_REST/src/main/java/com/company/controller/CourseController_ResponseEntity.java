@@ -22,7 +22,7 @@ public class CourseController_ResponseEntity {
     @GetMapping
     public ResponseEntity <List<CourseDTO>> getAllCourses(){
         return ResponseEntity
-                .status(HttpStatus.ACCEPTED)
+                .status(HttpStatus.CREATED)
                 .header("Version","Company.V2")
                 .header("Operation","Get List")
                 .body(courseService.getCourses());
