@@ -56,13 +56,33 @@ public class LoggingAspect {
 //              joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
 //  }
 
-    @Pointcut("@annotation( org.springframework.web.bind.annotation.DeleteMapping)")
-    public void anyDeleteControllerOperation(){}
+//   @Pointcut("@annotation( org.springframework.web.bind.annotation.DeleteMapping)")
+//   public void anyDeleteControllerOperation(){}
 
-    @Before("anyDeleteControllerOperation()")
-    public void beforeDeleteMappingAnnotation(JoinPoint joinPoint){
-        logger.info("Before -> Method: {},Arguments: {} , Target: {}",
-                joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
-    }
+//   @Before("anyDeleteControllerOperation()")
+//   public void beforeDeleteMappingAnnotation(JoinPoint joinPoint){
+//       logger.info("Before -> Method: {},Arguments: {} , Target: {}",
+//               joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//   }
+
+//  @Pointcut("@annotation(com.company.annotation.LoggingAnnotation)")
+//  public void loggingAnnotationPC(){}
+
+//  @Before("loggingAnnotationPC())")
+//  public void beforeLoggingMappingAnnotation(JoinPoint joinPoint){
+//      logger.info("Before -> Method: {},Arguments: {} , Target: {}",
+//              joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//  }
+
+    @Pointcut("@annotation( org.springframework.web.bind.annotation.GetMapping)")
+    public void afterReturningGetMappingAnnotation(){}
+
+//   @AfterReturning(pointcut = "afterReturningGetMappingAnnotation()", returning = "result")
+//   public void afterReturningGetMappingOperation(JoinPoint joinPoint, Object result){
+//       logger.info("After Returning -> Method : {} , Result : {}", joinPoint.getSignature(),result.toString() );
+//   }
+
+
+
 
 }
