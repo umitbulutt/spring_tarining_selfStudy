@@ -17,6 +17,12 @@ public class LoggingAspect {
     Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
 
+    @Pointcut("execution(* com.company.controller.CourseController.*(..))")   //Defining my joinPoint
+    public void myPointcut(){}
 
+    @Before("myPointcut()")
+    public void log(){
+        logger.info("Info log........");
+    }
 
 }
