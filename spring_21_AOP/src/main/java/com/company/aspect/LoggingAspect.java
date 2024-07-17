@@ -5,6 +5,7 @@ package com.company.aspect;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 
+import org.hibernate.mapping.Join;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -32,14 +33,36 @@ public class LoggingAspect {
 //        logger.info("Info log.................");
 //    }
 
-    @Pointcut("execution(* com.company.repository.CourseRepository.findById(*))")
-    public void courseRepositoryFindByIdPC(){}
+//   @Pointcut("execution(* com.company.repository.CourseRepository.findById(*))")
+//   public void courseRepositoryFindByIdPC(){}
 
 
-    @Before("courseRepositoryFindByIdPC()")
-    public void beforeFindCourseRepositoryById(JoinPoint joinPoint){  //JoinPoint are the method we wanted to implement before or after
-        logger.info("Before : Method: {},Arguments: {}, Target: {}"
-                , joinPoint.getSignature(), joinPoint.getArgs(),joinPoint.getTarget());
+//   @Before("courseRepositoryFindByIdPC()")
+//   public void beforeFindCourseRepositoryById(JoinPoint joinPoint){  //JoinPoint are the method we wanted to implement before or after
+//       logger.info("Before : Method: {},Arguments: {}, Target: {}"
+//               , joinPoint.getSignature(), joinPoint.getArgs(),joinPoint.getTarget());
+//   }
+
+//  @Pointcut("within(com.company.controller..*)")
+//  public void anyControllerOperation(){
+//  }
+
+//  @Pointcut("@within(org.springframework.stereotype.Service)")
+//  public void anyServiceOperation(){}
+
+//  @Before("anyControllerOperation() || anyServiceOperation()")
+//  public void beforeControllerOrServiceAdvice(JoinPoint joinPoint){
+//      logger.info("Before -> Method: {},Arguments: {} , Target: {}",
+//              joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
+//  }
+
+    @Pointcut("@annotation( org.springframework.web.bind.annotation.DeleteMapping)")
+    public void anyDeleteControllerOperation(){}
+
+    @Before("anyDeleteControllerOperation()")
+    public void beforeDeleteMappingAnnotation(JoinPoint joinPoint){
+        logger.info("Before -> Method: {},Arguments: {} , Target: {}",
+                joinPoint.getSignature(),joinPoint.getArgs(),joinPoint.getTarget());
     }
 
 }
