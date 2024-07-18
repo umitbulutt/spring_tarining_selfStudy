@@ -2,6 +2,7 @@ package com.company.aspect;
 
 
 
+import com.company.dto.CourseDTO;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 
@@ -82,7 +83,10 @@ public class LoggingAspect {
 //       logger.info("After Returning -> Method : {} , Result : {}", joinPoint.getSignature(),result.toString() );
 //   }
 
-
+///   @AfterReturning(pointcut = "afterReturningGetMappingAnnotation()", returning = "results")
+///   public void afterReturningGetMappingOperation(JoinPoint joinPoint, List<CourseDTO> results){
+///       logger.info("After Returning -> Method : {} , Result : {}", joinPoint.getSignature(),results.toString() );
+///   }
 
 
 }
