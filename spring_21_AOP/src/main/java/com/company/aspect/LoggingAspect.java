@@ -88,5 +88,11 @@ public class LoggingAspect {
 ///       logger.info("After Returning -> Method : {} , Result : {}", joinPoint.getSignature(),results.toString() );
 ///   }
 
+    @AfterThrowing(pointcut = "afterReturningGetMappingAnnotation()", throwing = "exception")
+    public void afterThrowingGetMappingOperation(JoinPoint joinPoint, Exception exception){
+        logger.error("After Throwing -> Method: {} , Exception: {}",
+                joinPoint.getSignature().toShortString(),exception.getMessage());
+    }
+
 
 }
