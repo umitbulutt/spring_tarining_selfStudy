@@ -26,7 +26,17 @@ class CalculatorTest {
     void testCase3(){        // if either any element or order is not same, it will fail
         System.out.println("Test Case 3");
         assertArrayEquals(new int[]{1,2,3,}, new int[]{1,2,3},"Arrays are not same.");
+    } @Test
+    void testCase4(){
+        System.out.println("Test Case 4");
+
+        String nullString =  null;
+        String notNullString = "Cydeo";
+
+        assertNull(nullString);
+        assertNotNull(notNullString);
     }
+
 
 
 }
