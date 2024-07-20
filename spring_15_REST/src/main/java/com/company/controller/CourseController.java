@@ -22,6 +22,7 @@ public class CourseController {
     @GetMapping
     public List<CourseDTO> getAllCourses(){
         //return all courses
+
         return courseService.getCourses();
 
     }

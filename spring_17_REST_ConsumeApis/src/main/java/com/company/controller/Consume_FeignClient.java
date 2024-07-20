@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
+
+
 @RestController
 public class Consume_FeignClient {
 
@@ -31,7 +33,7 @@ public class Consume_FeignClient {
     }
 
 
-    @GetMapping("/api/v1/employee")
+    @GetMapping("/api/v1/employee")     //localhost:8080/api/v1/employee
     public ResponseEntity<ResponseWrapper> getEmployee(){
 
         return ResponseEntity.ok(

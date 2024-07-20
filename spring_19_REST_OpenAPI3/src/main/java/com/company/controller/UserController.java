@@ -28,23 +28,36 @@ public class UserController {
 
     @GetMapping("/list")
     @Operation(summary = "Read All Users")
-    @ApiResponses( value = {
-            @ApiResponse(responseCode = "200", description = "Successfully retrieved users (OK)",
-            content = @Content(mediaType = "application/json")),
-            @ApiResponse(responseCode = "400",description = "Bad Request", content = @Content),
-            @ApiResponse(responseCode = "404",description = "Not Found", content = @Content)
-    }
+         @ApiResponses( value = {
+                 @ApiResponse(responseCode = "600",
+                         description = "Naber gozde (OK)",
+                         content = @Content(mediaType = "application/json")),
+                 @ApiResponse(
+                         responseCode = "400",
+                         description = "Bad Request",
+                         content = @Content),
+                 @ApiResponse(
+                         responseCode = "404",
+                         description = "Not Found",
+                         content = @Content)
+         }
 
     )
+
     public ResponseEntity<List<UserDTO>> getAllUsers() {
         return ResponseEntity.ok(userService.getUsers());
     }
 
   @PostMapping(consumes = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE},
   produces = {MediaType.APPLICATION_XML_VALUE, MediaType.APPLICATION_JSON_VALUE})
-  @ApiResponse(responseCode = "201", description = "User created successfully (CREATED)",
+  @ApiResponse(
+          responseCode = "201",
+          description = "User created successfully (CREATED)",
           content = {@Content(mediaType = "application/xml"),@Content(mediaType = "application/json")},
-          headers = {@Header(name = "Connection",description = "keep-alive")}
+          headers = {
+                  @Header(name = "Connection",
+                  description = "keep-alive"
+                  )}
   )
   @Operation(summary = "Create a User")
       public ResponseEntity<UserDTO> createUser(@RequestBody UserDTO userDTO) {
