@@ -1,16 +1,16 @@
-package com.cydeo.service.impl;
+package com.company.service.impl;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.dto.UserDTO;
-import com.cydeo.entity.Project;
-import com.cydeo.entity.User;
-import com.cydeo.enums.Status;
-import com.cydeo.mapper.ProjectMapper;
-import com.cydeo.mapper.UserMapper;
-import com.cydeo.repository.ProjectRepository;
-import com.cydeo.service.ProjectService;
-import com.cydeo.service.TaskService;
-import com.cydeo.service.UserService;
+import com.company.dto.ProjectDTO;
+import com.company.dto.UserDTO;
+import com.company.entity.Project;
+import com.company.entity.User;
+import com.company.enums.Status;
+import com.company.mapper.ProjectMapper;
+import com.company.mapper.UserMapper;
+import com.company.repository.ProjectRepository;
+import com.company.service.ProjectService;
+import com.company.service.TaskService;
+import com.company.service.UserService;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 

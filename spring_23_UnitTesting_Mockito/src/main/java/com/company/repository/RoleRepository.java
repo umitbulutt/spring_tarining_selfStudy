@@ -1,6 +1,6 @@
-package com.cydeo.repository;
+package com.company.repository;
 
-import com.cydeo.entity.Role;
+import com.company.entity.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

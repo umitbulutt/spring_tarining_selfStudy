@@ -1,15 +1,11 @@
-package com.cydeo.entity;
+package com.company.entity;
 
-import com.cydeo.entity.BaseEntity;
-import com.cydeo.enums.Gender;
-import lombok.Data;
+import com.company.enums.Gender;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -30,7 +26,7 @@ public class User extends BaseEntity {
     private String phone;
 
     @ManyToOne
-    private Role role;
+    private com.company.entity.Role role;
 
     @Enumerated(EnumType.STRING)
     private Gender gender;

@@ -1,8 +1,8 @@
-package com.cydeo.converter;
+package com.company.converter;
 
-import com.cydeo.dto.ProjectDTO;
+import com.company.dto.ProjectDTO;
 //import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
-import com.cydeo.service.ProjectService;
+import com.company.service.ProjectService;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 

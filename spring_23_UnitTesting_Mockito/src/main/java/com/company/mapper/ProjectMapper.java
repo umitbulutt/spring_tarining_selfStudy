@@ -1,9 +1,7 @@
-package com.cydeo.mapper;
+package com.company.mapper;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.dto.UserDTO;
-import com.cydeo.entity.Project;
-import com.cydeo.entity.User;
+import com.company.dto.ProjectDTO;
+import com.company.entity.Project;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 

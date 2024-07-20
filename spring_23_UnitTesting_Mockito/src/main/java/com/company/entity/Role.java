@@ -1,6 +1,5 @@
-package com.cydeo.entity;
+package com.company.entity;
 
-import com.cydeo.entity.BaseEntity;
 import lombok.*;
 
 import javax.persistence.Entity;

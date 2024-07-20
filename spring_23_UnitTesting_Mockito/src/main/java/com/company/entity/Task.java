@@ -1,9 +1,6 @@
-package com.cydeo.entity;
+package com.company.entity;
 
-import com.cydeo.entity.BaseEntity;
-import com.cydeo.entity.Project;
-import com.cydeo.entity.User;
-import com.cydeo.enums.Status;
+import com.company.enums.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

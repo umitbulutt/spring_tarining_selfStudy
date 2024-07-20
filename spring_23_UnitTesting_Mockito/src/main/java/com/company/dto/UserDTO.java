@@ -1,6 +1,6 @@
-package com.cydeo.dto;
+package com.company.dto;
 
-import com.cydeo.enums.Gender;
+import com.company.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.ToString;

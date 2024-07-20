@@ -1,8 +1,6 @@
-package com.cydeo.dto;
+package com.company.dto;
 
-import com.cydeo.dto.ProjectDTO;
-import com.cydeo.dto.UserDTO;
-import com.cydeo.enums.Status;
+import com.company.enums.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

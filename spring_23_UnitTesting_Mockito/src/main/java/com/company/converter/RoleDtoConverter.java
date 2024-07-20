@@ -1,7 +1,7 @@
-package com.cydeo.converter;
+package com.company.converter;
 
-import com.cydeo.dto.RoleDTO;
-import com.cydeo.service.RoleService;
+import com.company.dto.RoleDTO;
+import com.company.service.RoleService;
 import org.springframework.boot.context.properties.ConfigurationPropertiesBinding;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.core.convert.converter.Converter;

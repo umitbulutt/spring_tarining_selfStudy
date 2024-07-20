@@ -1,10 +1,10 @@
-package com.cydeo.controller;
+package com.company.controller;
 
-import com.cydeo.dto.TaskDTO;
-import com.cydeo.enums.Status;
-import com.cydeo.service.ProjectService;
-import com.cydeo.service.TaskService;
-import com.cydeo.service.UserService;
+import com.company.dto.TaskDTO;
+import com.company.enums.Status;
+import com.company.service.ProjectService;
+import com.company.service.TaskService;
+import com.company.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
