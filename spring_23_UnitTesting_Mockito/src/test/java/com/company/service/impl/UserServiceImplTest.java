@@ -43,6 +43,10 @@ class UserServiceImplTest {
         verify(userRepository, atMostOnce()).findByUserNameAndIsDeleted("harold@manager.com", false);
         verify(userRepository, atMost(10)).findByUserNameAndIsDeleted("harold@manager.com", false);
 
+        InOrder inOrder = inOrder(userRepository, userMapper);
+
+        inOrder.verify(userRepository).findByUserNameAndIsDeleted("harold@manager.com", false);
+        inOrder.verify(userMapper).convertToDto(null);
 
 
 
