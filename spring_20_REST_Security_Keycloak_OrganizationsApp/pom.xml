@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.cydeo</groupId>
-    <artifactId>spring-20-REST-Security-Keycloak-OrganizationsApp</artifactId>
+    <artifactId>spring_20_REST_Security_Keycloak_OrganizationsApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spring-20-REST-Security-Keycloak-OrganizationsApp</name>
     <description>spring-20-REST-Security-Keycloak-OrganizationsApp</description>
