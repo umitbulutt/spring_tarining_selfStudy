@@ -40,9 +40,9 @@ class CalculatorTest {
     @Test
     void add2(){
         System.out.println("Add2 method");
-      //  assertThrows(IllegalArgumentException.class, () ->Calculator.add2(3,2));
-//        assertThrows(AccessDeniedException.class, () ->Calculator.add2(3,2));
-   //     assertThrows(IllegalArgumentException.class,()->Calculator.add2(2,3));
+          assertThrows(IllegalArgumentException.class, () ->Calculator.add2(3,2));
+          assertThrows(AccessDeniedException.class, () ->Calculator.add2(3,2));
+          assertThrows(IllegalArgumentException.class,()->Calculator.add2(2,3));
     }
 
 
@@ -91,6 +91,11 @@ class CalculatorTest {
 
     //maven-surefire-plugin
 
+
+    //
+    //            Functional Testing
+    //          Integration  Testing
+    //              Unit Testing
 
 
 
