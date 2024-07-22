@@ -40,6 +40,12 @@ class UserServiceImplTest {
         verify(userRepository, atLeastOnce()).findByUserNameAndIsDeleted("harold@manager.com", false);
 
 
+        verify(userRepository, atMostOnce()).findByUserNameAndIsDeleted("harold@manager.com", false);
+        verify(userRepository, atMost(10)).findByUserNameAndIsDeleted("harold@manager.com", false);
+
+
+
+
 
     }
 
