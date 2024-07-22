@@ -28,7 +28,25 @@ class ProjectServiceImplTest {
     @InjectMocks
     ProjectServiceImpl projectService;
 
+    @Test
+    void getByProjectCode_Test() {
 
+        // Given
+        when(projectRepository.findByProjectCode(anyString())).thenReturn(new Project());   // Stubbing
+        when(projectMapper.convertToDto(any(Project.class))).thenReturn(new ProjectDTO());
+
+        // When
+        ProjectDTO projectDTO = projectService.getByProjectCode(anyString());
+
+        // Then
+        InOrder inOrder = inOrder(projectRepository, projectMapper);  // I want to check the order of these 2 Mocks
+
+        inOrder.verify(projectRepository).findByProjectCode(anyString());   // We are providing in which order these 2 Mocks should be
+        inOrder.verify(projectMapper).convertToDto(any(Project.class));
+
+        assertNotNull(projectDTO);
+
+    }
 
 
 }
