@@ -14,7 +14,7 @@ import javax.print.attribute.standard.Media;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(WelcomeController.class)
 public class WelcomeControllerTest {
@@ -47,9 +47,9 @@ public class WelcomeControllerTest {
                 .accept(MediaType.APPLICATION_JSON);
 
 
-        mvc.perform(request)
-                .andExpect(status().isOk())
-                .andExpect(content().string("welcome"))
+        mvc.perform(request)                                              // perform request it is like clicking the button for postman
+                .andExpect(status().isOk())                               //  return type of the status should be 200
+                .andExpect(content().string("welcome"))     //  content = body , as html
                 .andReturn();
     }
 
